@@ -17,7 +17,7 @@ body {
 .slider {
     position: relative;
     height: 800px;
-    background-image: url(img/slider-img.jpg);
+    background-image: url('/static/img/slider-img.jpg');
 }
 
 .padding-site {
@@ -615,13 +615,13 @@ li .active-link-1i2 {
 .img-1 {
     height: 683px;
     width: 683px;
-    background-image: url(img/promo-img1.jpg);
+    background-image: url('/static/img/promo-img1.jpg');
 }
 
 .img-2 {
     height: 683px;
     width: 683px;
-    background-image: url(img/promo-img.jpg);
+    background-image: url('/static/img/promo-img.jpg');
 }
 
 .slider-text-2 {
@@ -683,7 +683,7 @@ li .active-link-1i2 {
 .slider-3 {
     position: relative;
     height: 800px;
-    background-image: url(img/slider.jpg);
+    background-image: url('/static/img/slider.jpg');
 }
 
 .padding-site-3 {
@@ -760,7 +760,7 @@ li .active-link-1i2 {
 .footer-all {
     position: relative;
     height: 384px;
-    background-image: url(img/footer-back.jpg);
+    background-image: url('/static/img/footer-back.jpg');
 }
 
 .footer-environment {

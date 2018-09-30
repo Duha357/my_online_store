@@ -15,11 +15,7 @@
             <div class="header">
                 <a class="logo" href="/"><img src="/static/img/logo.png" alt="logo"></a>
                 <ul class="menu">
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="/products/">PRODUCTS</a></li>
-                    <li><a href="#">HISTORY</a></li>
-                    <li><a href="#">SHOWROOM</a></li>
-                    <li><a class="active-link" href="/contacts/">CONTACT</a></li>
+                    {% include 'mainapp\components\menu.html' with class5='active-link' %}
                     <li>
                         <form><img src="/static/img/search.svg" alt="search"><input type="search" placeholder="Search..."></form>
                     </li>
