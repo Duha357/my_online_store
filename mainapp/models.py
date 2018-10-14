@@ -9,7 +9,14 @@ class Manufacturer(models.Model):
 
 class Armchair(models.Model):
     name = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='products_images', blank=True)
+    image = models.ForeignKey(
+        'images.Image',
+        on_delete=models.PROTECT
+    )
+    # image = models.ImageField(
+    #     upload_to='products_images',
+    #     blank=True
+    # )
     country = models.CharField(
         max_length=250,
         blank=True,
@@ -28,7 +35,14 @@ class Armchair(models.Model):
 
 class Table(models.Model):
     name = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='products_images', blank=True)
+    image = models.ForeignKey(
+        'images.Image',
+        on_delete=models.PROTECT
+    )
+    # image = models.ImageField(
+    #     upload_to='products_images',
+    #     blank=True
+    # )
     country = models.CharField(
         max_length=250,
         blank=True,
@@ -47,7 +61,14 @@ class Table(models.Model):
 
 class Lamp(models.Model):
     name = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='products_images', blank=True)
+    image = models.ForeignKey(
+        'images.Image',
+        on_delete=models.PROTECT
+    )
+    # image = models.ImageField(
+    #     upload_to='products_images',
+    #     blank=True
+    # )
     country = models.CharField(
         max_length=250,
         blank=True,
@@ -66,7 +87,14 @@ class Lamp(models.Model):
 
 class Kettle(models.Model):
     name = models.CharField(max_length=250)
-    image = models.ImageField(upload_to='products_images', blank=True)
+    image = models.ForeignKey(
+        'images.Image',
+        on_delete=models.PROTECT
+    )
+    # image = models.ImageField(
+    #     upload_to='products_images',
+    #     blank=True
+    # )
     country = models.CharField(
         max_length=250,
         blank=True,
