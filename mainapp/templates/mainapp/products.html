@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Fishnet Chair</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
@@ -13,11 +15,11 @@
     <div class="container">
         <div class="padding-site contact-top">
             <div class="header">
-                <a class="logo" href="/"><img src="/static/img/logo.png" alt="logo"></a>
+                <a class="logo" href="/"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
                 <ul class="menu">
                     {% include 'mainapp\components\menu.html' with class3='active-link' %}
                     <li>
-                        <form><img src="/static/img/search.svg" alt="search"><input type="search" placeholder="Search..."></form>
+                        <form><img src="{% static 'img/search.svg' %}" alt="search"><input type="search" placeholder="Search..."></form>
                     </li>
                 </ul>
                 <div class="caption-products">
@@ -37,22 +39,22 @@
         </div>
         <div class="all-products padding-site">
             <div class="product-img">
-                <a href="#"><img src="/static/img/product-5.jpg" alt="product-5"></a>
+                <a href="#"><img src="{% static 'img/product-5.jpg' %}" alt="product-5"></a>
             </div>
             <div class="product-img">
-                <a href="#"><img src="/static/img/product-6.jpg" alt="product-6"></a>
+                <a href="#"><img src="{% static 'img/product-6.jpg' %}" alt="product-6"></a>
             </div>
             <div class="product-img">
-                <a href="#"><img src="/static/img/product-7.jpg" alt="product-7"></a>
+                <a href="#"><img src="{% static 'img/product-7.jpg' %}" alt="product-7"></a>
             </div>
             <div class="product-img">
-                <a href="#"><img src="/static/img/product-8.jpg" alt="product-8"></a>
+                <a href="#"><img src="{% static 'img/product-8.jpg' %}" alt="product-8"></a>
             </div>
             <div class="product-img">
-                <a href="#"><img src="/static/img/product-9.jpg" alt="product-9"></a>
+                <a href="#"><img src="{% static 'img/product-9.jpg' %}" alt="product-9"></a>
             </div>
             <div class="product-img">
-                <a href="#"><img src="/static/img/product-10.jpg" alt="product-10"></a>
+                <a href="#"><img src="{% static 'img/product-10.jpg' %}" alt="product-10"></a>
             </div>
         </div>
         <div class="padding-site product-refresh">
@@ -64,7 +66,7 @@
                     <h3>EXCLUSIVE</h3>
                     <h2>FISHNET CHAIR</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt powder-coated black.</p>
-                    <a href="#">Order Us<img src="/static/img/arrow.svg" alt="arrow"></a>
+                    <a href="#">Order Us<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
                 </div>
             </div>
             <div class="img-2 padding-site-2">
@@ -72,7 +74,7 @@
                     <h3>EXCLUSIVE</h3>
                     <h2>FISHNET CHAIR</h2>
                     <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt powder-coated black.</p>
-                    <a href="#">Order Us<img src="/static/img/arrow.svg" alt="arrow"></a>
+                    <a href="#">Order Us<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
                 </div>
             </div>
         </div>
@@ -99,7 +101,7 @@
                     <p>Suscribe to&nbsp;know about our latest news, products and special offers just for suscribers.</p>
                     <form action="#">
                         <input class="email" type="text" name="email" placeholder="your email address">
-                        <button type="button"><img src="/static/img/airplane.png" alt="airplane"></button>
+                        <button type="button"><img src="{% static 'img/airplane.png' %}" alt="airplane"></button>
                     </form>
                 </div>
             </div>

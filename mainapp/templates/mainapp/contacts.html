@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Fishnet Chair</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
@@ -13,11 +15,11 @@
     <div class="container">
         <div class="padding-site contact-top">
             <div class="header">
-                <a class="logo" href="/"><img src="/static/img/logo.png" alt="logo"></a>
+                <a class="logo" href="/"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
                 <ul class="menu">
                     {% include 'mainapp\components\menu.html' with class5='active-link' %}
                     <li>
-                        <form><img src="/static/img/search.svg" alt="search"><input type="search" placeholder="Search..."></form>
+                        <form><img src="{% static 'img/search.svg' %}" alt="search"><input type="search" placeholder="Search..."></form>
                     </li>
                 </ul>
                 <div class="caption-contacts">
@@ -27,7 +29,7 @@
         </div>
         <div class="address-page">
             <div class="address-block">
-                <img src="/static/img/mark.png" alt="marker">
+                <img src="{% static 'img/mark.png' %}" alt="marker">
                 <h3>California</h3>
                 <p class="p-name">Phone:</p>
                 <p class="p-info">1900&nbsp;&mdash; 1234 &minus;5678</p>
@@ -37,7 +39,7 @@
                 <p class="p-info">12&nbsp;W 1st St, 90001 Los Angeles, California</p>
             </div>
             <div class="address-block">
-                <img src="/static/img/mark.png" alt="marker">
+                <img src="{% static 'img/mark.png' %}" alt="marker">
                 <h3>California</h3>
                 <p class="p-name">Phone:</p>
                 <p class="p-info">1900&nbsp;&mdash; 1234 &minus;5678</p>
@@ -47,7 +49,7 @@
                 <p class="p-info">12&nbsp;W 1st St, 90001 Los Angeles, California</p>
             </div>
             <div class="address-block">
-                <img src="/static/img/mark.png" alt="marker">
+                <img src="{% static 'img/mark.png' %}" alt="marker">
                 <h3>California</h3>
                 <p class="p-name">Phone:</p>
                 <p class="p-info">1900&nbsp;&mdash; 1234 &minus;5678</p>
@@ -80,7 +82,7 @@
                     <p>Suscribe to&nbsp;know about our latest news, products and special offers just for suscribers.</p>
                     <form action="#">
                         <input class="email" type="text" name="email" placeholder="your email address">
-                        <button type="button"><img src="/static/img/airplane.png" alt="airplane"></button>
+                        <button type="button"><img src="{% static 'img/airplane.png' %}" alt="airplane"></button>
                     </form>
                 </div>
             </div>

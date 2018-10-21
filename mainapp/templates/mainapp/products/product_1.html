@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Fishnet Chair</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
@@ -13,11 +15,11 @@
     <div class="container">
         <div class="padding-site">
             <div class="header">
-                <a class="logo" href="/"><img src="/static/img/logo.png" alt="logo"></a>
+                <a class="logo" href="/"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
                 <ul class="menu">
                     {% include 'mainapp\components\menu.html' with class3='active-link' %}
                     <li>
-                        <form><img src="/static/img/search.svg" alt="search"><input type="search" placeholder="Search..."></form>
+                        <form><img src="{% static 'img/search.svg' %}" alt="search"><input type="search" placeholder="Search..."></form>
                     </li>
                 </ul>
             </div>
@@ -34,12 +36,12 @@
         </div>
         <div class="buy-blocks padding-site">
             <div class="slider-buy">
-                <img src="/static/img/slider-1.jpg" alt="slider-1">
+                <img src="{% static 'img/slider-1.jpg' %}" alt="slider-1">
                 <div class="slider-menu">
                     <ul>
-                        <li class="active-slider-menu"><a href="products_1.html"><img src="/static/img/slider-2.jpg" alt="slider-2"></a></li>
-                        <li><a href="product_1.html"><img src="/static/img/slider-3.jpg" alt="slider-3"></a></li>
-                        <li><a href="product_1.html"><img src="/static/img/slider-4.jpg" alt="slider-4"></a></li>
+                        <li class="active-slider-menu"><a href="products_1.html"><img src="{% static 'img/slider-2.jpg' %}" alt="slider-2"></a></li>
+                        <li><a href="product_1.html"><img src="{% static 'img/slider-3.jpg' %}" alt="slider-3"></a></li>
+                        <li><a href="product_1.html"><img src="{% static 'img/slider-4.jpg' %}" alt="slider-4"></a></li>
                     </ul>
                 </div>
             </div>
@@ -53,17 +55,17 @@
         </div>
         <div class="header-1i2 padding-site">
             <p class="caption-related-products">Related Products</p>
-            <a class="explore-all-related-products" href="/products/">EXPLORE ALL<img src="/static/img/arrow.svg" alt="arrow"></a>
+            <a class="explore-all-related-products" href="/products/">EXPLORE ALL<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
         </div>
         <div class="related-products padding-site">
             <div class="product-img">
-                <a href="product_1.html"><img src="/static/img/product-5.jpg" alt="product-5"></a>
+                <a href="product_1.html"><img src="{% static 'img/product-5.jpg' %}" alt="product-5"></a>
             </div>
             <div class="product-img">
-                <a href="product_1.html"><img src="/static/img/product-6.jpg" alt="product-6"></a>
+                <a href="product_1.html"><img src="{% static 'img/product-6.jpg' %}" alt="product-6"></a>
             </div>
             <div class="product-img">
-                <a href="product_1.html"><img src="/static/img/product-7.jpg" alt="product-7"></a>
+                <a href="product_1.html"><img src="{% static 'img/product-7.jpg' %}" alt="product-7"></a>
             </div>
         </div>
         <div class="footer-all footer-environment">
@@ -89,7 +91,7 @@
                     <p>Suscribe to&nbsp;know about our latest news, products and special offers just for suscribers.</p>
                     <form action="#">
                         <input class="email" type="text" name="email" placeholder="your email address">
-                        <button type="button"><img src="/static/img/airplane.png" alt="airplane"></button>
+                        <button type="button"><img src="{% static 'img/airplane.png' %}" alt="airplane"></button>
                     </form>
                 </div>
             </div>

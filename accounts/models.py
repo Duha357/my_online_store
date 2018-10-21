@@ -9,8 +9,8 @@ class Account(AbstractUser):
         blank=True,
         null=True
     )
-    phone = models.CharField(
-        max_length=12,
+    age = models.CharField(
+        max_length=3,
         blank=True,
         null=True
     )
