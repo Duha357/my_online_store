@@ -10,7 +10,7 @@ class Category(models.Model):
         blank=True,
         null=True
     )
-    modified = models.DateTimeField(
+    modified = models.DateTimeField(  # Опечатка в слове modifie_(l)_d
         auto_now=True
     )
     created = models.DateTimeField(
@@ -19,6 +19,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Product(models.Model):
     title = models.CharField(
@@ -42,7 +43,7 @@ class Product(models.Model):
         decimal_places=2,
         default=0
     )
-    Manufacturer = models.ForeignKey(
+    Manufacturer = models.ForeignKey(  # Опечатка большой буквы
         'mainapp.Manufacturer',
         on_delete=models.CASCADE
     )
@@ -51,7 +52,7 @@ class Product(models.Model):
         blank=True,
         null=True
     )
-    modified = models.DateTimeField(
+    modified = models.DateTimeField(  # Опечатка в слове modifie_(l)_d
         auto_now=True
     )
     created = models.DateTimeField(
@@ -60,5 +61,5 @@ class Product(models.Model):
 
     def __str__(self):
         if self.country:
-            return (self.title, self.country)
+            return self.title, self.country
         return self.title

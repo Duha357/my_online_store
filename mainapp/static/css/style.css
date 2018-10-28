@@ -84,16 +84,22 @@ body {
     border-bottom: 3px solid #212121;
 }
 
-.menu img {
+.menu form img {
     padding: 0px 13px;
     cursor: pointer;
 }
 
-.menu img:hover ~ input {
+.menu form img:hover ~ input {
     font-size: 17px;
     font-weight: 300;
     width: 300px;
     border-bottom: 3px solid #212121;
+}
+
+.menu__img {
+    width: 30px;
+    height: 30px;
+    padding-top: 7.5px;
 }
 
 li .active-link {
@@ -177,6 +183,11 @@ li .active-link {
     line-height: 72px;
     text-align: left;
     z-index: 2;
+}
+
+.master-page {
+    padding-top: 71px;
+    padding-bottom: 122px;
 }
 
 .address-page {
@@ -337,6 +348,11 @@ li .active-link-screening-product {
     margin-bottom: 5px;
     width: 570px;
     height: auto;
+}
+
+.product-big-picture {
+    width: 570px;
+    height: 570px;
 }
 
 .slider-menu {

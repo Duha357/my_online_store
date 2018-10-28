@@ -12,7 +12,3 @@ def contacts(request):
 
 def products(request):
     return render(request, 'mainapp/products.html')
-
-
-def product_1(request):
-    return render(request, 'mainapp/products/product_1.html')

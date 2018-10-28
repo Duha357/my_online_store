@@ -10,5 +10,9 @@ class Image(models.Model):
         upload_to='images/'
     )
 
+    @property
+    def url(self):
+        return self.value.url
+
     def __str__(self):
         return self.name

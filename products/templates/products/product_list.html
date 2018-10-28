@@ -1,0 +1,7 @@
+{% extends 'mainapp/products.html' %}
+
+{% block page_content %}
+    {% for product in results %}
+    {% include 'products/components/product_link.html' with id=forloop.counter0 %}
+    {% endfor %}
+{% endblock %}
