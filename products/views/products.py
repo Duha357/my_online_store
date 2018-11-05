@@ -2,14 +2,49 @@ from django.shortcuts import render, redirect, get_object_or_404, get_list_or_40
 from django.urls import reverse_lazy
 from products.forms import ProductModelForm
 from products.models import Product
+from django.core.paginator import Paginator
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 
 # Create your views here.
-def product_list(request):
-    query = Product.objects.all()
-    # query = get_list_or_404(Product) - для вывода ошибки отсутствия контента
+class ProductListView(ListView):
+    model = Product
+    template_name = 'products/product_list.html'
+    context_object_name = 'results'
+    paginate_by = 6
 
-    return render(request, 'products/product_list.html', {'results': query})
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'products/product_detail.html'
+    context_object_name = 'instanse'
+
+class ProductCreateView(CreateView):
+    model = Product
+    template_name = 'products/create.html'
+    # fields = ['title', 'category', 'image', 'snippet', 'cost', 'Manufacturer', 'country']
+    form_class = ProductModelForm
+    success_url = reverse_lazy('products:product_list')
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    template_name = 'products/create.html'
+    form_class = ProductModelForm
+    success_url = reverse_lazy('products:product_list')
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    template_name = 'products/delete.html'
+    success_url = reverse_lazy('products:product_list')
+
+def product_list(request):
+    #  query = Product.objects.all()
+    query = get_list_or_404(Product)  # - для вывода ошибки отсутствия контента
+    paginator = Paginator(query, 6)
+    page = request.GET.get('page')
+    items = paginator.get_page(page)
+
+    # return render(request, 'products/product_list.html', {'results': query}) - для вывода страниц, без пагинации
+    return render(request, 'products/product_list.html', {'results': items})
 
 
 def product_detail(request, pk):

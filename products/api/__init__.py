@@ -1,0 +1,1 @@
+from .categories import rest_category_list

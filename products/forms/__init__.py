@@ -1,2 +1,2 @@
 from .categories import CategoryForm
-from .categories import ProductModelForm
+from .products import ProductModelForm
