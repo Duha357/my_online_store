@@ -15,9 +15,7 @@ def rest_category_list(request):
         query
     )
     return JsonResponse(
-            {
-            'results': list(data)
-            }
+            {'results': list(data)}
     )
     # return HttpResponse(          - или вот так
     #         json.dumps(

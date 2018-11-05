@@ -20,6 +20,7 @@ from django.conf import settings
 
 router = [
     path('categories/', include('products.endpoints.categories')),
+    path('products/', include('products.endpoints.products')),
 ]
 
 urlpatterns = [

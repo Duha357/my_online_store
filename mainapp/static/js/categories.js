@@ -4,11 +4,11 @@ const Category = ({title}) => (
             ${title}
         </h2>
     </li>'
-)
+);
 
-const renderData = res => {
+const renderCategoryData = res => {
     menuHtml = res.data.results.map(Category)
         .join('')
-    menu = document.getElementById('menu')
+    menu = document.getElementById('categories')
     meny.innerHTML += menuHtml
 }
