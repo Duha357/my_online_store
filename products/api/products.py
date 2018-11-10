@@ -1,6 +1,13 @@
 from django.shortcuts import get_list_or_404
 from django.http import JsonResponse
 from products.models import Product
+from rest_framework.viewsets import ModelViewSet
+from products.serializers import ProductSerializer
+
+
+class ProductViewSet(ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
 
 
 def rest_product_list(request):

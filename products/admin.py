@@ -1,6 +1,6 @@
 from django.contrib import admin
-from products.models import Category, Product
 from django.template.loader import render_to_string
+from products.models import Category, Product
 
 # Register your models here.
 class CategoryAdmin(admin.ModelAdmin):
@@ -17,7 +17,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = [
-        'title', 'image', 'cost', 'modified', 'created'
+        'title', 'picture', 'cost', 'modified', 'created'
     ]  # Опечатка в слове modifie_(l)_d
     list_filter = [
         'modified', 'created'
@@ -26,7 +26,7 @@ class ProductAdmin(admin.ModelAdmin):
         'title', 'snippet'
     ]
 
-    def image(self, obj):
+    def picture(self, obj):
         return render_to_string(
             'products/components/picture.html',
             {'image': obj.image.url}
