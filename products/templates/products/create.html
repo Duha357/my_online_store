@@ -1,0 +1,31 @@
+{% extends 'mainapp/master.html' %}
+
+{% block page_title %}
+<p>{{ template_write_name }}</p>
+{% endblock %}
+
+{% block page_content %}
+<form class="model-form" method="POST" action="">
+    {% csrf_token %}
+    {% for err in field.not_field_errors %}
+        <span class="form__alert-danger">
+            {{ err }}
+        </span>
+    {% endfor %}
+    {% for field in form %}
+    <div class="form-field">
+        <label class="form-field__label" for="{{ field.name }}">
+            {{ field.label }}
+        </label>
+        {{ field }}
+
+        {% for err in field.errors %}
+        <p class="form-field__error">
+            {{ err }}
+        </p>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

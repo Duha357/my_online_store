@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fishnet Chair</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="padding-site">
+            <div class="header">
+                <a class="logo" href="/"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
+                <ul class="menu">
+                    {% include 'mainapp\components\menu.html' with class3='active-link' %}
+                    <li>
+                        <form><img src="{% static 'img/search.svg' %}" alt="search"><input type="search" placeholder="Search..."></form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="product-top">
+            <ul class="screening-product-menu">
+                <li><a class="active-link-screening-product" href="#">All</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">OFFICE</a></li>
+                <li><a href="#">FURNITURE</a></li>
+                <li><a href="#">MODERN</a></li>
+                <li><a href="#">CLASSIC</a></li>
+            </ul>
+        </div>
+        <div class="buy-blocks padding-site">
+            <div class="slider-buy">
+                <img class="product-big-picture" src="{{ instanse.image.url }}" alt="{{ product.title }}">
+                <div class="slider-menu">
+                    <ul>
+                        <li class="active-slider-menu"><a href="products_list.html"><img src="{% static 'img/slider-2.jpg' %}" alt="slider-2"></a></li>
+                        <li><a href="product_list.html"><img src="{% static 'img/slider-3.jpg' %}" alt="slider-3"></a></li>
+                        <li><a href="product_list.html"><img src="{% static 'img/slider-4.jpg' %}" alt="slider-4"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="caption-and-description">
+                <p class="caption-and-description-p1">{{ instanse }}</p>
+                <p class="caption-and-description-p2">Hot Deal</p>
+                <p class="caption-and-description-p3">$&nbsp;<span class="slider-price">{{ instanse.cost }}</span>/sq</p>
+                <a href="#">Order Us<img src="/static/img/arrow-2.svg" alt="arrow"></a>
+                <p class="caption-and-description-p4">The majesty of&nbsp;Mountains&nbsp;&mdash; Ugmonk style.<br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do&nbsp;eiusmod tempor incididunt ut&nbsp;labore et&nbsp;dolore magna aliqua. Ut&nbsp;enim ad&nbsp;minim veniam, quis nostrud exercitation ullamco laboris nisi ut&nbsp;aliquip ex&nbsp;ea&nbsp;commodo consequat.<br><br> Duis aute irure dolor in&nbsp;reprehenderit in&nbsp;voluptate velit esse cillum dolore eu&nbsp;fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            </div>
+        </div>
+        <div class="header-1i2 padding-site">
+            <p class="caption-related-products">Related Products</p>
+            <a class="explore-all-related-products" href="/products/">EXPLORE ALL<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
+        </div>
+        <div class="related-products padding-site">
+            <div class="product-img">
+                <a href="product_list.html"><img src="{% static 'img/product-5.jpg' %}" alt="product-5"></a>
+            </div>
+            <div class="product-img">
+                <a href="product_list.html"><img src="{% static 'img/product-6.jpg' %}" alt="product-6"></a>
+            </div>
+            <div class="product-img">
+                <a href="product_list.html"><img src="{% static 'img/product-7.jpg' %}" alt="product-7"></a>
+            </div>
+        </div>
+        <div class="footer-all footer-environment">
+            <div class="footer">
+                <div class="contact-us">
+                    <h2>CONTACT US</h2>
+                    <p>132A Bridge Road Richmond VIC&nbsp;Australia.</p> <br>
+                    <p>Talk to&nbsp;us on&nbsp;1300&nbsp;132 info@interior.com</p>
+                </div>
+                <div class="useful-inf">
+                    <h2>USEFUL INFORMATION</h2>
+                    <ul class="footer-ul">
+                        <li>SALES TERMS</li>
+                        <li>CUSTOMER CARE</li>
+                        <li>DELIVERY</li>
+                        <li>ARCHITECT ACCOUNTS</li>
+                        <li>CAREERS</li>
+                        <li>EXCHANGES &amp;&nbsp;RETURNS</li>
+                    </ul>
+                </div>
+                <div class="lets-stay">
+                    <h2>LET&rsquo;S STAY IN&nbsp;TOUCH!</h2>
+                    <p>Suscribe to&nbsp;know about our latest news, products and special offers just for suscribers.</p>
+                    <form action="#">
+                        <input class="email" type="text" name="email" placeholder="your email address">
+                        <button type="button"><img src="{% static 'img/airplane.png' %}" alt="airplane"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer footer-end">
+                <h4>&copy;&nbsp;COPYRIGHT&nbsp;&mdash; INTERIOR 2016. All RIGHTS RESERVED.</h4>
+                <div class="icon-link-block">
+                    <a class="icon-link" href="#">
+<i class="fab fa-facebook-f"></i>
+</a>
+                    <a class="icon-link" href="#">
+<i class="fab fa-twitter"></i>
+</a>
+                    <a class="icon-link" href="#">
+<i class="fab fa-google-plus-g"></i>
+</a>
+                    <a class="icon-link" href="#">
+<i class="fab fa-pinterest-p"></i>
+</a>
+                </div>
+                <h4>TERMS &amp;&nbsp;CONDITIONS&nbsp;/ PRIVACY POLICY &amp;&nbsp;COOKIES</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

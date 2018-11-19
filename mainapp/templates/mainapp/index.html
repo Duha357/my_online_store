@@ -1,0 +1,163 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fishnet Chair</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="slider padding-site">
+            <div class="header">
+                <a class="logo" href="/"><img src="{% static 'img/logo.png' %}" alt="logo"></a>
+                <ul class="menu">
+                    {% include 'mainapp\components\menu.html' with class2='active-link' %}
+                    <li>
+                        <form>
+                            <img src="{% static 'img/search.svg' %}" alt="search"><input type="search" placeholder="Search...">
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="slider-text">
+                <h3>TRENDING</h3>
+                <h2>FISHNET CHAIR</h2>
+                <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt powder-coated black.</p>
+                <a href="/product_list/">Order Us<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
+            </div>
+            <div class="pagination">
+                <a href="#" class="circle"></a>
+                <a href="#" class="circle circle-active"></a>
+                <a href="#" class="circle"></a>
+            </div>
+        </div>
+        <div class="slider-1i2 padding-site">
+            <div class="header-1i2">
+                <ul class="menu-1i2">
+                    <li><a class="active-link-1i2" href="#">Featured</a></li>
+                    <li><a href="#">New</a></li>
+                </ul>
+                <a class="explore-all" href="/products/">EXPLORE ALL<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
+            </div>
+            <div class="box-product">
+                <div class="product-hover">
+                    <img src="{% static 'img/product-1.jpg' %}" alt="product-1">
+                    <div class="text-product">
+                        <a href="#">&gt;</a>
+                        <h3>Fishnet Chair</h3>
+                        <p>Seat and back with upholstery made of&nbsp;cold cure foam.</p>
+                    </div>
+                </div>
+                <div class="product-hover">
+                    <img src="{% static 'img/product-2.jpg' %}" alt="product-2">
+                    <div class="text-product">
+                        <a href="#">&gt;</a>
+                        <h3>Fishnet Chair</h3>
+                        <p>Seat and back with upholstery made of&nbsp;cold cure foam.</p>
+                    </div>
+                </div>
+                <div class="product-hover">
+                    <img src="{% static 'img/product-3.jpg' %}" alt="product-3">
+                    <div class="text-product">
+                        <a href="#">&gt;</a>
+                        <h3>Fishnet Chair</h3>
+                        <p>Seat and back with upholstery made of&nbsp;cold cure foam.</p>
+                    </div>
+                </div>
+                <div class="product-hover">
+                    <img src="{% static 'img/product-4.jpg' %}" alt="product-4">
+                    <div class="text-product">
+                        <a href="#">&gt;</a>
+                        <h3>Fishnet Chair</h3>
+                        <p>Seat and back with upholstery made of&nbsp;cold cure foam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-2">
+            <div class="img-1 padding-site-2">
+                <div class="slider-text-2">
+                    <h3>EXCLUSIVE</h3>
+                    <h2>FISHNET CHAIR</h2>
+                    <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt powder-coated black.</p>
+                    <a href="#">Order Us<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
+                </div>
+            </div>
+            <div class="img-2 padding-site-2">
+                <div class="slider-text-2">
+                    <h3>EXCLUSIVE</h3>
+                    <h2>FISHNET CHAIR</h2>
+                    <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt powder-coated black.</p>
+                    <a href="#">Order Us<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-3 padding-site-3">
+            <div class="slider-text-3">
+                <h3>HOT DEAL</h3>
+                <h2>FISHNET CHAIR</h2>
+                <p>Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt powder-coated black.</p>
+                <a href="#">Order Us<img src="{% static 'img/arrow.svg' %}" alt="arrow"></a>
+            </div>
+            <div class="pagination-2">
+                <a href="#" class="circle"></a>
+                <a href="#" class="circle circle-active"></a>
+                <a href="#" class="circle"></a>
+            </div>
+        </div>
+        <div class="footer-all footer-environment">
+            <div class="footer">
+                <div class="contact-us">
+                    <h2>CONTACT US</h2>
+                    <p>132A Bridge Road Richmond VIC&nbsp;Australia.</p> <br>
+                    <p>Talk to&nbsp;us on&nbsp;1300&nbsp;132 info@interior.com</p>
+                </div>
+                <div class="useful-inf">
+                    <h2>USEFUL INFORMATION</h2>
+                    <ul class="footer-ul">
+                        <li>SALES TERMS</li>
+                        <li>CUSTOMER CARE</li>
+                        <li>DELIVERY</li>
+                        <li>ARCHITECT ACCOUNTS</li>
+                        <li>CAREERS</li>
+                        <li>EXCHANGES &amp;&nbsp;RETURNS</li>
+                    </ul>
+                </div>
+                <div class="lets-stay">
+                    <h2>LET&rsquo;S STAY IN&nbsp;TOUCH!</h2>
+                    <p>Suscribe to&nbsp;know about our latest news, products and special offers just for suscribers.</p>
+                    <form action="#">
+                        <input class="email" type="text" name="email" placeholder="your email address">
+                        <button type="button"><img src="{% static 'img/airplane.png' %}" alt="airplane"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer footer-end">
+                <h4>&copy;&nbsp;COPYRIGHT&nbsp;&mdash; INTERIOR 2016. All RIGHTS RESERVED.</h4>
+                <div class="icon-link-block">
+                    <a class="icon-link" href="#">
+<i class="fab fa-facebook-f"></i>
+</a>
+                    <a class="icon-link" href="#">
+<i class="fab fa-twitter"></i>
+</a>
+                    <a class="icon-link" href="#">
+<i class="fab fa-google-plus-g"></i>
+</a>
+                    <a class="icon-link" href="#">
+<i class="fab fa-pinterest-p"></i>
+</a>
+                </div>
+                <h4>TERMS &amp;&nbsp;CONDITIONS&nbsp;/ PRIVACY POLICY &amp;&nbsp;COOKIES</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
