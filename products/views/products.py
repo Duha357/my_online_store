@@ -1,3 +1,5 @@
+from functools import reduce
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from django.urls import reverse_lazy
 from accounts.mixins import AdminGroupRequired
@@ -7,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -117,3 +120,31 @@ def product_model_delete(request, pk):
         return redirect(success_url)
 
     return render(request, template_name, {'template_write_name': template_write_name})
+
+
+def product_json_list(request):
+    query_params = (
+        (key, list(map(int, value.split(','))) if key.endswith('_in') else value)
+        for key, value in request.GET.items()
+    )
+    query = get_list_or_404(
+        Product,
+        reduce(
+            lambda store, itm: store | Q(**{itm[0]: itm[1]}),
+            query_params,
+            Q()
+        )
+    )
+
+    return JsonResponse(
+        list(
+            map(
+                lambda itm: {
+                    'id': itm.id,
+                    'title': itm.title
+                },
+                query
+            )
+        ),
+        safe=False
+    )

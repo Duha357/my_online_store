@@ -1,9 +1,30 @@
 {% extends 'mainapp/products.html' %}
+{% load static %}
 
 {% block page_content %}
-    {% for product in page_obj %}
+    {% for product in object_list %}
     {% include 'products/components/product_link.html' with id=product.id %}
     {% endfor %}
+{% endblock %}
+
+{% block product_js %}
+<script src="{% static 'js/counter.js' %}"></script>
+<script>
+    const items = document.querySelectorAll('.product-img');
+    items.forEach(
+        itm => {
+            const btn = itm.querySelector('button')
+            btn.addEventListener(
+                'click',
+                evt => {
+                    incLocalValue(
+                        'products', btn.getAttribute('itemid')
+                    )
+                }
+            )
+        }
+    );
+</script>
 {% endblock %}
 
 {% block product_pagination %}

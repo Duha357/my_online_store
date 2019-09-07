@@ -24,8 +24,10 @@ router = DefaultRouter()
 router.register('products', ProductViewSet)
 
 default_router = [
-    path('categories/', include('products.endpoints.categories')),
-    path('products/', include('products.endpoints.products')),
+    path('categories_endpoints/', include('products.endpoints.categories')),
+    path('products_endpoints/', include('products.endpoints.products')),
+    path('products/', include('products.routes')),
+    path('cart/', include('cart.routes')),
 ]
 
 urlpatterns = [
@@ -33,7 +35,9 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('products/', include('products.urls.products')),
     path('categories/', include('products.urls.categories')),
+    path('cart/', include('cart.urls')),
     path('', include('mainapp.urls')),
     path('default_api/', include(default_router)),
     path('api/', include(router.urls)),
+    path('auth/oauth2/', include('social_django.urls', namespace="social")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

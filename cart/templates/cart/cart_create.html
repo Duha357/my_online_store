@@ -1,0 +1,50 @@
+{% extends 'mainapp/master.html' %}
+
+{% load static %}
+
+{% block page_title %}
+{% csrf_token %}
+<p>Create Purchase</p>
+{% endblock %}
+
+{% block page_content %}
+<ul class="product-list"></ul>
+<div class="control-panel"></div>
+{% endblock %}
+
+{% block product_js %}
+<script src="{% static 'js/counter.js' %}"></script>
+<script src="{% static 'js/submit.js' %}"></script>
+<script src="{% static 'js/items.js' %}"></script>
+
+<script>
+    const emptyText = 'Корзина пуста';
+    const mainUrl = '{% url "products:product_list" %}';
+    const createPurchaseUrl = '{% url "cart_api:create" %}';
+    const tokenInput = document.querySelector('[name=csrfmiddlewaretoken]');
+    const productsList = document.querySelector('.product-list');
+    const controlPanel = document.querySelector('.control-panel');
+    const items = getLocalValue('products');
+    const identityList = Object.keys(items);
+
+    if (identityList.length > 0) {
+        const productsUrl = `{% url 'rest_main:list' %}?id__in=${identityList.join(',')}`;
+
+        fetch(productsUrl)
+            .then(response => response.json())
+            .then(data => {
+                data.map(
+                    itm => productsList.innerHTML += renderItem(itm, items[itm.id])
+                )
+            })
+
+        controlPanel.appendChild(
+            createCartSubmit(createPurchaseUrl, tokenInput.value)
+        );
+    } else {
+        productsList.appendChild(
+            createEmptyMock(mainUrl, emptyText)
+        );
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,13 @@
+<div class="product-img">
+    <a href="{% url 'products:product_detail' pk=id %}">
+        <div class="product__image">
+            <img src="{{ item.product.image.url }}" alt="{{ product.title }}">
+        </div>
+        <h2 class="product__title">
+            {{ item.product.title }}
+        </h2>
+        <span class="product__cost">
+            {{ item.product.cost }}
+        </span>
+    </a>
+</div>

@@ -13,6 +13,14 @@
 
 <body>
     <div class="container">
+        {% if not user.is_authenticated %}
+        <button class="btn btn-round form-control">
+            <a href="{% url 'social:begin' 'google-oauth2' %}?next=/">
+            Google+ sign in
+            </a>
+        </button>
+        {% endif %}
+
         <div class="slider padding-site">
             <div class="header">
                 <a class="logo" href="/"><img src="{% static 'img/logo.png' %}" alt="logo"></a>

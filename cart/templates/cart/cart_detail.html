@@ -1,0 +1,29 @@
+{% extends 'mainapp/master.html' %}
+
+{% load static %}
+
+{% block page_title %}
+{% csrf_token %}
+<p>Purchase detail {{ object }}</p>
+{% endblock %}
+
+{% block page_content %}
+<ul class="product-list">
+    {% for itm in object.items.all %}
+    <li class="product-item">
+        <span class="product-item__title">{{ itm.product.title }}</span>
+        <span class="product-item__count">{{ itm.value }}</span>
+    </li>
+    {% endfor %}
+</ul>
+<ul class="total-list">
+    <li class="total-item total-item-count">
+        <span>Total count</span>
+        <span>{{ object.items.count }}</span>
+    </li>
+    <li class="total-item total-item_cost">
+        <span>Total cost</span>
+        <span>{{ object.items.cost }}</span>
+    </li>
+</ul>
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
+
 class Account(AbstractUser):
     avatar = models.ForeignKey(
         'images.Image',
@@ -17,3 +17,18 @@ class Account(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class Profile(models.Model):
+    account = models.OneToOneField(
+        Account,
+        on_delete=models.CASCADE
+    )
+
+    age = models.IntegerField(
+        verbose_name='возраст',
+        default=18
+    )
+
+    def __str__(self):
+        return self.age

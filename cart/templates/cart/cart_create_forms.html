@@ -1,0 +1,16 @@
+{% extends 'mainapp/master.html' %}
+
+{% block page_title %}
+<p>Create Purchase</p>
+{% endblock %}
+
+{% block page_content %}
+{% include 'cart/components/cart_form.html' with form=form %}
+<ul>
+    {% for child_form in formset %}
+    <li>
+        {% include 'cart/components/cart_form.html' with form=child_form %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

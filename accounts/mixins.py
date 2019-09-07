@@ -3,6 +3,8 @@ from django.shortcuts import redirect
 
 # Здесь мы создаём собственные группы пользователей и даём им права
 class AdminGroupRequired:
+    # Группа для управляющих продуктами
+
     redirect_url = ''
 
     def dispatch(self, request, *args, **kwargs):
