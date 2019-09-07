@@ -52,13 +52,17 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
 )
 
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
+# OAuth2 google+ authorization
+google_file_path = os.path.join(BASE_DIR, 'google+.json')
 
-with open('google+.json', 'r') as f:
-    GOOGLE_PLUS = json.load(f)
+if os.path.exists(google_file_path):
+    SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_PLUS['SOCIAL_AUTH_GOOGLE_OAUTH2_KEY']
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_PLUS['SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET']
+    with open('google+.json', 'r') as f:
+        GOOGLE_PLUS = json.load(f)
+
+    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = GOOGLE_PLUS['SOCIAL_AUTH_GOOGLE_OAUTH2_KEY']
+    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = GOOGLE_PLUS['SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,13 +125,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycorg2',
-    #     'NAME': 'postgres',
-    #     'USER': 'postgres',
-    #     'HOST': 'database',
-    #     'PORT': 5432
-    # }
 }
 
 
@@ -173,7 +170,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'my_online_store' 'static'),
 ]
 
 MEDIA_URL = '/media/'
